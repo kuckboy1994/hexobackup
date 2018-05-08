@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/css-tricks/catinmiddle1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/css-tricks/psuedoplaceholders.jpg">
-<meta property="og:updated_time" content="2018-05-07T11:53:25.219Z">
+<meta property="og:updated_time" content="2018-05-08T03:53:21.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用伪元素来形成类似“居中浮动”的效果">
 <meta name="twitter:description" content="文本翻译自 css-tricks 网站的 Faking ‘float: center’ with Pseudo Elements 一文。翻译有误，期待斧正。 正文比方说，你想完成一个类似这样的布局：  这个展示效果没毛病吧？特别是你想把这个猫作为文章的重点。 做到这一点其实并不容易。我们当前有的布局方法并不能真正的考虑到这一点。事实上，有时候觉得这种布局并没有真正的“网页设计”的思想。我说的对吗？">
@@ -89,7 +89,7 @@
 		        
 					<a class="weibo" target="_blank" href="https://www.weibo.com/shanchao1994" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="/blog.kuckboy1994.com/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kuckboy1994/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
@@ -132,7 +132,7 @@
 			        
 						<a class="weibo" target="_blank" href="https://www.weibo.com/shanchao1994" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="/blog.kuckboy1994.com/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kuckboy1994/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -185,8 +185,7 @@
 <p><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/css-tricks/catinmiddle1.png" alt="catinmiddle1"></p>
 <p>这个展示效果没毛病吧？特别是你想把这个猫作为文章的重点。</p>
 <p>做到这一点其实并不容易。我们当前有的布局方法并不能真正的考虑到这一点。事实上，有时候觉得这种布局并没有真正的“网页设计”的思想。我说的对吗？我不认为即使有这种流通边缘的CSS布局系统就能很好地处理这个问题。这有点像float，因为文本环绕着图像，但是文本环绕两个方向，所以有点像<code>float: center;</code>居中浮动;或<code>float: both;</code>全部浮动，但这两个都是不存在的。</p>
-<p>但这是可以实现的！</p>
-<p>证明：<a href="https://css-tricks.com/examples/FloatBoth/" target="_blank" rel="noopener">查看</a> <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/css-tricks/float-both/index.html" target="_blank" rel="noopener">查看源码</a></p>
+<p>但这是可以实现的！<br><a id="more"></a><br>证明：<a href="https://css-tricks.com/examples/FloatBoth/" target="_blank" rel="noopener">查看</a> <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/css-tricks/float-both/index.html" target="_blank" rel="noopener">查看源码</a></p>
 <p>我们将通过使用浮动的伪元素占位符来实现它。每一<code>列①</code>放入一个伪元素占位符，一个左浮动，一个右浮动。伪元素的高度为图像的高度，宽度为图像的一半宽（差不多，不要忘记你还有padding和中间的槽【两列中间的分隔距离】需要考虑）。</p>
 <p>主要代码：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#l</span><span class="selector-pseudo">:before</span>, <span class="selector-id">#r</span><span class="selector-pseudo">:before</span> &#123; </span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">125px</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">250px</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#l</span><span class="selector-pseudo">:before</span> &#123; </span><br><span class="line">  <span class="attribute">float</span>: right; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#r</span><span class="selector-pseudo">:before</span> &#123; </span><br><span class="line">  <span class="attribute">float</span>: left; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -198,27 +197,6 @@
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -312,6 +290,11 @@
       </div>
     </a>
   
+  
+    <a href="/2017/11/05/谈一谈一年来的经历/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">谈一谈一年来的经历</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -435,6 +418,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">翻译</a>
               </li>
              
@@ -443,11 +430,59 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">规范</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BEM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注释</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">xss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
             <div class="clearfix"></div>
@@ -510,7 +545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">专注种多肉的前端一枚</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">专注种多肉的前端一枚&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a href=&#34;/简历&#34;&gt;简历&lt;/a&gt;</div>
   	  	
     	</section>
     

@@ -85,12 +85,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: yilia
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:kuckboy1994/kuckboy1994.github.io.git
-  branch: master
 
 sitemap:
     path: sitemap.xml
@@ -121,3 +115,18 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: rsync
+  # type: git
+  repo: git@github.com:kuckboy1994/kuckboy1994.github.io.git
+  branch: master
+  host: 140.143.193.185
+  user: root
+  root: /data/blog
+  port: 22
+  delete: true
+  verbose: true
+  ignore_errors: true

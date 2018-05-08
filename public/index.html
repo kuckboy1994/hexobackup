@@ -85,7 +85,7 @@
 		        
 					<a class="weibo" target="_blank" href="https://www.weibo.com/shanchao1994" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="/blog.kuckboy1994.com/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kuckboy1994/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
@@ -128,7 +128,7 @@
 			        
 						<a class="weibo" target="_blank" href="https://www.weibo.com/shanchao1994" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="/blog.kuckboy1994.com/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kuckboy1994/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -158,6 +158,578 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-XSS攻击" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/02/XSS攻击/">XSS攻击</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/02/XSS攻击/" class="archive-article-date">
+  	<time datetime="2018-01-02T06:22:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XSS攻击全称跨站脚本攻击，常见的就是攻击者把恶意代码植入到用户页面中。</p>
+<p>在XSS攻击中，一般有三个角色参与：攻击者、目标服务器、受害者的浏览器。</p>
+<p>由于服务端没有对用户的输入做安全方面的验证，攻击者就通过输入的方式，夹带一些恶意的html脚本代码（包括html, css, js）。<br>
+        
+          <a class="article-more-a" href="/2018/01/02/XSS攻击/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">xss</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/02/XSS攻击/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-获取本机的ip地址" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/26/获取本机的ip地址/">获取本机的ip地址</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/26/获取本机的ip地址/" class="archive-article-date">
+  	<time datetime="2017-12-26T06:20:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有的时候我们需要知道我们本地机器的ip地址。</p>
+<p>前端项目大部分都是通过localhost:端口号来运行的，但是比如我们要写RN的时候，在安卓模拟器中的我们可能就不能直接使用<code>localhost</code>或<code>127.0.0.1</code>，使用的应该是局域网给我们动态分配的ip地址。</p>
+<p>下面介绍两种三种方式获得动态分配的ip地址：</p>
+<h2 id="图形化获取"><a href="#图形化获取" class="headerlink" title="图形化获取"></a>图形化获取</h2><ol>
+<li>打开偏好设置，点击网络<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png" alt="">
+        
+          <a class="article-more-a" href="/2017/12/26/获取本机的ip地址/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mac</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/26/获取本机的ip地址/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-前端优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/21/前端优化/">前端优化</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/21/前端优化/" class="archive-article-date">
+  	<time datetime="2017-12-21T06:19:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端优化主要包括：网络加载类、页面渲染类、CSS优化类、JavaScript执行类、缓存类、图片类、架构协议类等几类。</p>
+<h2 id="网络加载"><a href="#网络加载" class="headerlink" title="网络加载"></a>网络加载</h2><p>1．<code>减少 HTTP 资源请求次数</code>在前端页面中，通常建议尽可能合并静态资源图片、JavaScript 或 CSS 代码，减少页面请求数和资源请求消耗，这样可以缩短页面首次访问的用户等待时间。通过构建工具合并雪碧图、CSS、JavaScript 文件等都是为了减少 HTTP 资源请求次数。另外也要尽量避免重复的资源，防止增加多余请求。</p>
+<p>2．<code>减小 HTTP 请求大小</code>除了减少 HTTP 资源请求次数，也要尽量减小每个 HTTP 请求的大小。如减少没必要的图片、JavaScript、CSS 及 HTML 代码，对文件进行压缩优化，或者使用 gzip 压缩传输内容等都可以用来减小文件大小，缩短网络传输等待时延。前面我们使用构建工具来压缩静态图片资源以及移除代码中的注释并压缩，目的都是为了减小 HTTP 请求的大小。</p>
+<p>3．<code>将 CSS 或 JavaScript 放到外部文件中</code>，避免使用<code>&lt;style&gt;</code>或<code>&lt;script&gt;</code>标签直接引入在 HTML 文件中引用外部资源可以有效利用浏览器的静态资源缓存，但有时候在移动端页面 CSS 或 JavaScript 比较简单的情况下为了减少请求，也会将 CSS 或 JavaScript 直接写到 HTML 里面，具体要根据 CSS 或 JavaScript 文件的大小和业务的场景来分析。如果 CSS 或 JavaScript 文件内容较多，业务逻辑较复杂，建议放到外部文件引入。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//cdn.domain.com/path/main.css"</span> &gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.domain.com/path/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/12/21/前端优化/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/21/前端优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="vuejs-项目小结（一）" class="article article-type-vuejs  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/20/项目小结（一）/">项目小结（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/20/项目小结（一）/" class="archive-article-date">
+  	<time datetime="2017-12-20T06:17:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>许久没有写vue了，前几天有人问我问题，概念都有些理不清楚了。。<br>项目快完成，总结一下。从最基础的开始，重现我遇到的问题和一些细节问题。</p>
+<h2 id="项目效果图"><a href="#项目效果图" class="headerlink" title="项目效果图"></a>项目效果图</h2><p><img src="https://github.com/kuckboy1994/Blog/raw/master/images/vuejs-summary-1/overlap-1.png" alt=""><br>
+        
+          <a class="article-more-a" href="/2017/12/20/项目小结（一）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">vuex</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">svg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/20/项目小结（一）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-注释规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/04/注释规范/">注释规范</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/04/注释规范/" class="archive-article-date">
+  	<time datetime="2017-12-04T06:11:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此为开发团队遵循和约定的<code>注释规范</code>，意在降低后期维护的代价。</p>
+<h2 id="为什么要写代码注释？"><a href="#为什么要写代码注释？" class="headerlink" title="为什么要写代码注释？"></a>为什么要写代码注释？</h2><ul>
+<li>编码规范中有一条就是——见名知意。但有的时候直白的函数名不能表达完整的意思，这时候就是注释就可以很好的帮助我们解释和说明了。</li>
+<li>请确保你的代码能够自描述、注释良好并且易于他人理解。</li>
+<li>好的代码注释能够传达上下文关系和代码目的。</li>
+</ul>
+<h2 id="注释中写什么？"><a href="#注释中写什么？" class="headerlink" title="注释中写什么？"></a>注释中写什么？</h2><ul>
+<li>难于理解的代码段</li>
+<li>可能存在错误的代码段</li>
+<li>浏览器特殊的HACK代码</li>
+<li>想吐槽的产品逻辑</li>
+<li>业务逻辑强相关的代码</li>
+</ul>
+<p>对这些内容写一些注释对于自己或帮助他人理解是非常有帮助的。<br>
+        
+          <a class="article-more-a" href="/2017/12/04/注释规范/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">规范</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注释</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/04/注释规范/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vi-vim" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/03/vi-vim/">vi-vim</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/03/vi-vim/" class="archive-article-date">
+  	<time datetime="2017-12-03T06:09:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><code>vi</code>和<code>Vim</code>都是运行在<code>类Unix系统</code>下的编辑器。<br><code>vi</code>是<code>Visual</code>的不正规的缩写。<br><code>Vim</code>是从<code>vi</code>发展出来的一个文本编辑器。正式名字<code>Vi IMproved</code>。</p>
+<h2 id="vi琐事"><a href="#vi琐事" class="headerlink" title="vi琐事"></a>vi琐事</h2><p>vi是在伯克利加州大学，Evans Hall中，使用”Lear-Siegler ADM3A终端”编写完成，在这台机器上的“退出键”（Esc），也就是今天键盘“表格键”（Tab）的位置，目前vi用户仍使用“退出键”（Esc）来转换状态。<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/vi%26vim/asm3aKeyboard.png" alt=""><br>看了这张图，ヾ(｡｀Д´｡) 和HHKB的键盘好像啊，怪不得大神都用HHKB。<br>但用HHKB不一定是大神☹。<br>
+        
+          <a class="article-more-a" href="/2017/12/03/vi-vim/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">编辑器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/03/vi-vim/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-laydate日历组件改造心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/30/laydate日历组件改造心得/">laydate日历组件改造心得</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/30/laydate日历组件改造心得/" class="archive-article-date">
+  	<time datetime="2017-11-30T06:07:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近两天对<code>layDate 5.0.85</code>版本进行了改造。来谈一下心得。</p>
+<h2 id="修改内容"><a href="#修改内容" class="headerlink" title="修改内容"></a>修改内容</h2><ol>
+<li>修复了当<code>min</code>的<code>日</code>比<code>max</code>的<code>日</code>大的时候。在切换到月份显示界面的时候，最小值的月份显示为不可点。</li>
+<li>增加了过滤日期的功能（正选和反选）</li>
+<li>增加了选择最近的功能</li>
+<li>增加了暗黑主题<br>想要体验的小伙伴，点击<a href="https://github.com/kuckboy1994/laydate" target="_blank" rel="noopener">传送门</a></li>
+</ol>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>当时<code>豆饼</code>(我的同事小伙伴)推荐了我使用layDate日历组件，我看了一下感觉样式上和功能上基本都满足我们工作所需，而且是开源的（这就方便我们个性化的定制）。号称是layui独立维护的三大组件之一，而且还是最近重写的，瞬间感觉就被他征服了。立马上手！<br>
+        
+          <a class="article-more-a" href="/2017/11/30/laydate日历组件改造心得/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/30/laydate日历组件改造心得/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-讨论一下css命名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -165,74 +737,30 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/07/讨论一下css命名/">讨论一下css命名</a>
+      <a class="article-title" href="/2017/11/22/讨论一下css命名/">讨论一下css命名</a>
     </h1>
   
 
         
-        <a href="/2018/05/07/讨论一下css命名/" class="archive-article-date">
-  	<time datetime="2018-05-07T11:53:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
+        <a href="/2017/11/22/讨论一下css命名/" class="archive-article-date">
+  	<time datetime="2017-11-22T11:53:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>现在开发中遇到的最头痛的事情莫过于给css命名了。好的命名可以快速的帮我们定位到页面中的元素，修改上也非常轻松。<br>幸运的是我们有<code>BEM</code>。</p>
-<h2 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h2><p>块（block）、元素（element）、修饰符方法（modifier）(通常称为BEM)是HTML和CSS类中常用的命名约定。是由<code>Yandex</code>团队提出的，它的目标是帮助开发者更好地理解项目中的HTML和CSS之间的关系。</p>
+        <p>现在开发中遇到的最头痛的事情莫过于给css命名了。好的命名可以快速的帮我们定位到页面中的元素，修改上也非常轻松。<br>幸运的是我们有 <code>BEM</code>。</p>
+<h2 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h2><p>块（block）、元素（element）、修饰符方法（modifier）(通常称为BEM)是HTML和CSS类中常用的命名约定。是由 <code>Yandex</code> 团队提出的，它的目标是帮助开发者更好地理解项目中的HTML和CSS之间的关系。</p>
 <ul>
 <li>B: block 是模块，或者称为一个组件。</li>
-<li>E: element 代表块中的元素（子节点），为了表明子节点属于哪个模块，写法是<code>block__element</code>。</li>
+<li>E: element 代表块中的元素（子节点），为了表明子节点属于哪个模块，写法是 <code>block__element</code> 。</li>
 <li>M：modifier 代表某个节点的修饰状态。</li>
 </ul>
 <p>下面是简单的例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span>&#123;&#125;    <span class="comment">/* 模块 */</span></span><br><span class="line"><span class="selector-class">.block--modifier</span>&#123;&#125;  <span class="comment">/* 当前模块的修饰符 */</span></span><br><span class="line"><span class="selector-class">.block__element</span>&#123;&#125;   <span class="comment">/* 模块下面的元素 */</span></span><br><span class="line"><span class="selector-class">.block__element--modifier</span>&#123;&#125; <span class="comment">/* 当前模块下面的元素的修饰符 */</span></span><br></pre></td></tr></table></figure></p>
-<p>你可能会存在疑问为什么使用两个<code>-</code>或两个<code>_</code>，其实这个是给你用来当做连接符来使用的。这样同样增加了你命名的多样性。<br>例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.footer-bar</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.footer-bar--full</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.footer-bar__info</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><em>注意</em></strong></p>
-<p>有修饰符了并不意味原来的<code>.block__element</code>就不需要了，<code>.block__element</code>是主体，<code>.block__element--modifier</code>的作用仅仅是展示<code>modifier</code>的效果。<br>下面是一个good的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block block--mod"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block block--size-big block--shadow-yes"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>下面是一个bad的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block--mod"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>BEM的好处是让你看着类名就知道他在哪里（场景）使用的。不像<code>css module</code> 通过不断的增加层级来显示他的位置。举个类似生活中的模型来显示BEM的是如何关联的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.person&#123;&#125;</span><br><span class="line">.person__hand&#123;&#125;</span><br><span class="line">.person__hand--left&#123;&#125;</span><br><span class="line">.person--female&#123;&#125;</span><br><span class="line">.person--female__hand&#123;&#125; /* 不推荐这么写 */</span><br></pre></td></tr></table></figure></p>
-<p>只要能看懂单词的意思，基本上就知道了指代是什么。<br>可能有人会疑惑<code>.person--female__hand{}</code>不就变成主体了吗？其实我是不推荐这么写的，如果你想展示的是<code>女性的手</code>的话，可以通过在父元素person上增加<code>.person--female</code>来修饰。存在多个状态可以增加<code>.block__element--modifier</code>来修饰，完全没有问题。</p>
-<p>再举个官网上的例子：<br>我们有一个表单，想要在圣诞节增加一点节日气息，我们就可以增加一个<code>form--theme-xmas</code>的类，通过<code>--</code>修饰符我们可以快速的构建我们新的版本。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"form form--theme-xmas form--simple"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form__input"</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"form__submit form__submit--disabled"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.form</span> &#123; &#125;</span><br><span class="line"><span class="selector-class">.form--theme-xmas</span> &#123; &#125;</span><br><span class="line"><span class="selector-class">.form--simple</span> &#123; &#125;</span><br><span class="line"><span class="selector-class">.form__input</span> &#123; &#125;</span><br><span class="line"><span class="selector-class">.form__submit</span> &#123; &#125;</span><br><span class="line"><span class="selector-class">.form__submit--disabled</span> &#123; &#125;</span><br></pre></td></tr></table></figure>
-<p>再增加一个配图的例子：o(╯□╰)o<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/bem/site-search.png" alt=""><br>这个搜索框就可以看作一个块Block，这个块里由两个子节点，一个是输入区域input，还有一个是查询按钮button。<br>对于这个块的命名，按照BEM法则，我们可以写成以下这样：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"site-search"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"site-search__input"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"site-search__button"</span> <span class="attr">value</span>=<span class="string">"search"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>将整体的搜索框命名为site-search作为一个模块，模块下的两个子节点就在后面加上两根下划线，加上自己的名字 input 和 button，这样的命名方式，即使我们没有看到网页内容，只看了CSS样式名字，也能感受到页面结构和页面元素之间的关系。<br>如果要说明按钮button是灰色的，我们还可以加上修饰的类名modifier，比如可以是site-search__button–gray。<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/bem/site-search__button.png" alt=""><br>上图就说明能将某个元素进行模块化，里面能够包含多个元素，这样的命名规范能够更好的说明元素之间的关系。</p>
-<p><code>Yandex</code>提出的<code>BEM</code>只是一种比较严格的命名规范，个人认为最重要的是严格，你只有严格遵守了，才不会出现一些奇怪的问题。至于规则都是可以更加自身情况改变的。</p>
-<h2 id="BEM变异"><a href="#BEM变异" class="headerlink" title="BEM变异"></a>BEM变异</h2><p>并列选择器版本<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block-element</span><span class="selector-class">.modifier</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>.modifier 不单独使用，所以不存在冲突<br>例1：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.menu-item</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.menu-item</span><span class="selector-class">.active</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>例2：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.shopCart</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.shopCart-title</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.shopCart-item</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.shopCart-item</span><span class="selector-class">.selected</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>BEN和BEM变异——并列选择器演示：<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/BEM/index.html" target="_blank" rel="noopener">demo</a></p>
-<h2 id="BEM和BEM变异和原本的命名方式的对比"><a href="#BEM和BEM变异和原本的命名方式的对比" class="headerlink" title="BEM和BEM变异和原本的命名方式的对比"></a>BEM和BEM变异和原本的命名方式的对比</h2><p>BEM的优势：</p>
-<ul>
-<li>让原本存在多意的内容变得更加直意</li>
-<li>原本层次化的内容变成了扁平，查找更加方便</li>
-</ul>
-<p>BEM的劣势：</p>
-<ul>
-<li>长得难看，太长了（┑(￣Д ￣)┍）</li>
-<li>代码量增加（现在有gzip压缩，我们不需要担心文件太大，大部分编辑有自动补全功能也能接受）</li>
-</ul>
-<p>BEM变异——并列选择器的优势：</p>
-<ul>
-<li>让原本存在多意的内容变得更加直意</li>
-<li>比BEM的“段”</li>
-</ul>
-<p>BEM变异——并列选择器的劣势：</p>
-<ul>
-<li>会占用修饰符类。如果修饰符类的权重变大页面维护成本变大。</li>
-<li>不兼容ie6</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>引用一句话作为结束语：</p>
-<blockquote>
-<p>BEM（或BEM的变异）是一个非常有用，强大，简单的命名约定，让你的前端代码更容易阅读和理解，更容易协作，更容易控制，更加健壮和明确而且更加严密。<br>尽管BEM看上去多少有点奇怪，但是无论什么项目，它对前端开发者都是一个巨有价值的工具。</p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://www.w3cplus.com/css/mindbemding-getting-your-head-round-bem-syntax.html" target="_blank" rel="noopener">BEM思想之彻底弄清BEM语法</a></li>
-<li><a href="http://getbem.com/naming/" target="_blank" rel="noopener">getbem.com-naming</a></li>
-<li><a href="https://segmentfault.com/a/1190000012090363" target="_blank" rel="noopener">BEM实战之扒一扒淘票票页面</a></li>
-<li><a href="https://www.zhihu.com/question/21935157" target="_blank" rel="noopener">如何看待 CSS 中 BEM 的命名方式？</a></li>
-<li><a href="https://css-tricks.com/bem-101/" target="_blank" rel="noopener">BEM 101</a></li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2017/11/22/讨论一下css命名/#more">more >></a>
+        
       
 
       
@@ -263,7 +791,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/07/讨论一下css命名/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/讨论一下css命名/">展开全文 >></a>
         </p>
       
 
@@ -293,118 +821,108 @@
 
 
   
-    <article id="post-水平垂直居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-获取id元素的“又”一种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/11/水平垂直居中/">水平垂直居中</a>
+      <a class="article-title" href="/2017/11/15/获取id元素的“又”一种方法/">获取id元素的“又”一种方法</a>
     </h1>
   
 
         
-        <a href="/2017/11/11/水平垂直居中/" class="archive-article-date">
-  	<time datetime="2017-11-11T11:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-11</time>
+        <a href="/2017/11/15/获取id元素的“又”一种方法/" class="archive-article-date">
+  	<time datetime="2017-11-15T06:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><ol>
-<li><p>若是行内元素，给改元素的父级设置<code>text-align:center</code>，即可实现行内元素水平居中。<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/1-text-align.html" target="_blank" rel="noopener">demo</a></p>
-</li>
-<li><p>若是块级元素, 该元素设置<code>margin:0 auto</code>。<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/2-margin-auto.html" target="_blank" rel="noopener">demo</a></p>
-</li>
-<li><p>若子元素包含<code>float:left</code>属性, 为了让子元素水平居中, 则可让父元素宽度设置为<code>fit-content</code>,并且配合<code>margin</code>, 作如下设置:<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/3-margin-auto-fit-content.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fit-content</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: -moz-fit-content;</span><br><span class="line">    <span class="attribute">width</span>: -webkit-fit-content;</span><br><span class="line">    <span class="attribute">width</span>: fit-content;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 目前这个属性只支持Chrome和Firefox浏览器。</p>
-</li>
-<li><p>使用flex布局，可以很轻松的实现水平居中：<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/4-flex-justify-content.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> .son 将会被水平居中 </p>
-</li>
-<li><p>**使用CSS3盒模型，父元素<code>display:box;box-pack:center;</code></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: horizontal;</span><br><span class="line">    <span class="attribute">-webkit-box-pack</span>: center;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">display</span>: -moz-box;</span><br><span class="line">    <span class="attribute">-moz-box-orient</span>: horizontal;</span><br><span class="line">    <span class="attribute">-moz-box-pack</span>: center;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">display</span>: -o-box;</span><br><span class="line">    <span class="attribute">-o-box-orient</span>: horizontal;</span><br><span class="line">    <span class="attribute">-o-box-pack</span>: center;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">display</span>: -ms-box;</span><br><span class="line">    <span class="attribute">-ms-box-orient</span>: horizontal;</span><br><span class="line">    <span class="attribute">-ms-box-pack</span>: center;</span><br><span class="line">    </span><br><span class="line">    <span class="attribute">display</span>: box;</span><br><span class="line">    <span class="attribute">box-orient</span>: horizontal;</span><br><span class="line">    <span class="attribute">box-pack</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 没有深入了解。<br> 基本介绍：<code>display:box;</code>是09年出来的。<code>display: flex;</code>是12年出来的。地址：<a href="https://css-tricks.com/old-flexbox-and-new-flexbox/" target="_blank" rel="noopener">“Old” Flexbox and “New” Flexbox</a>。<br> 看文章说在手机页面的时候，老机子<code>display:flex</code>会有问题的时候就需要box上场啦。</p>
-</li>
-<li><p>通过使用决定对位，以及负值的<code>margin-left</code>来实现：<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/position-margin-left.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">0.5</span> * 当前元素的宽度; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用CSS3中新增的<code>transform</code>属性，以及绝对定位:<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/transform.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用绝对定位，以及<code>left:0;right:0;margin:0 auto;</code>：<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/horizontal/position-absolute-margin-auto.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><ol>
-<li><p>元素是单行文本，设置line-height等于父元素的高度。<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/1-line-height.html" target="_blank" rel="noopener">demo</a></p>
-</li>
-<li><p>元素是行内块级元素, 基本思想是使用display: inline-block, vertical-align: middle和一个伪元素让内容块处于容器中央。<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/2-display-inline-block.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parent</span><span class="selector-pseudo">::after</span>, <span class="selector-class">.son</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:inline-block;</span><br><span class="line">    <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parent</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="comment">/*width: 10px;*/</span></span><br><span class="line">    <span class="comment">/*background-color: blue;*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 通过父元素创建一个看不见的伪类（宽度为0），高度为100%，同时设置为<code>inline-block</code>和<code>vertical-align:middle</code>使元素垂直居中。<br> 这是一种很流行的方法, 也适应IE7。</p>
-</li>
-<li><p>可用<code>vertical-align</code>属性，而<code>vertical-align</code>只有在元素为<code>td</code>或者<code>th</code>时，才会生效，对于其他块级元素，例如<code>div</code>、<code>p</code>等，默认情况是不支持的。为了使用<code>vertical-align</code>，我们需要设置父元素<code>display:table-cell;vertical-align:middle</code>。<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/3-table-vertical-align.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用flex布局，<code>align-items: center;</code>: <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/4-flex-align-items-center.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用CSS3盒模型 <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/5-display-box.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">-webkit-box-pack</span>: center;</span><br><span class="line">    </span><br><span class="line">    <span class="attribute">display</span>: -moz-box;</span><br><span class="line">    <span class="attribute">-moz-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">-moz-box-pack</span>: center;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">display</span>: box;</span><br><span class="line">    <span class="attribute">box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">box-pack</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过使用决定对位，以及负值的<code>margin-top</code>来实现：<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/6-position-margin-top.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">0.5</span> * 高度的一半; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用CSS3中新增的<code>transform</code>属性，以及绝对定位:<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/7-position-transform.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(0, -50%);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置父元素相对定位<code>position:relative</code>，子元素如下css样式：<a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical/8-position-relative-absolute.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h2><ol>
-<li><p>flex: <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical-horizontal/1-flex.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绝对定位 + <code>margin</code>: <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical-horizontal/2-absolute-margin.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">0.5</span> * 宽度;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">0.5</span> * 高度;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绝对定位 + <code>transform</code> : <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical-horizontal/3-absolute-transform.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绝对定位 + <code>margin: auto</code> : <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical-horizontal/4-absolute-margin-auto.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>table</code> + <code>margin:auto</code> : <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical-horizontal/5-table-margin-auto.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ancestor</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>display:inline-block;vertical-align:middle;</code> : <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/vertical-horizontal-center/vertical-horizontal/6-inline-block-vertical-align.html" target="_blank" rel="noopener">demo</a></p>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parent</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">display</span>:inline-block;</span><br><span class="line">    <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:inline-block;</span><br><span class="line">    <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">    </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><ul>
-<li>flex<ul>
-<li>基本可以完成任何复杂的布局，</li>
-<li>兼容性ie11+</li>
-<li>不同浏览器需要前缀</li>
-<li>渲染的性能</li>
-</ul>
-</li>
-<li>绝对定位<ul>
-<li>+ <code>margin</code> 设置可以完美的兼容ie6，缺点是子元素宽高固定。</li>
-<li>+ <code>transform</code> 兼容ie11+，但是自由度上是最佳的。</li>
-</ul>
-</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://github.com/Arisons/css-center" target="_blank" rel="noopener">css-center</a></li>
-<li><a href="https://www.smashingmagazine.com/2013/05/centering-elements-with-flexbox/" target="_blank" rel="noopener">Flexbox Is As Easy As Pie: Designing CSS Layouts</a></li>
-</ul>
+        <h1 id="获取id元素的“又”一种方法"><a href="#获取id元素的“又”一种方法" class="headerlink" title="获取id元素的“又”一种方法"></a>获取id元素的“又”一种方法</h1><p>今天在偶然看到某大在掘金上面发了一篇文章<a href="https://juejin.im/post/5a0bae515188252964213855" target="_blank" rel="noopener">underscore 系列之如何写自己的 underscore</a>，渣渣的我就好奇的点进去看了起来。。。</p>
+<p>在关于 <strong>导出</strong> 的地方看到了</p>
+<blockquote>
+<p>typeof exports != ‘undefined’</p>
+</blockquote>
+<p>这样一句。</p>
+<p>纳尼？ <code>exports</code> 可以直接取到页面中的id为 <code>exports</code> 的元素。</p>
+<p>脑洞巨大的我抛下文章主要内容去查这个问题了。。。</p>
+<p>首先自己试验了一下 <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/window/window.id.html" target="_blank" rel="noopener">demo</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"exports"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    alert(window.document.getElementById('exports') == window.exports);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在ie下下面也能完美运行。。</p>
+<p>问题来了，难道大家都不知道这个方法吗？还是这个方法有什么弊端，大家都避而不用？<br>
+        
+          <a class="article-more-a" href="/2017/11/15/获取id元素的“又”一种方法/#more">more >></a>
+        
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/15/获取id元素的“又”一种方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-给文本输入框增加下边框效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/14/给文本输入框增加下边框效果/">给文本输入框增加下边框效果</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/14/给文本输入框增加下边框效果/" class="archive-article-date">
+  	<time datetime="2017-11-14T03:57:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文本翻译自 <a href="https://css-tricks.com/" target="_blank" rel="noopener">css-tricks</a> 网站的 <a href="https://css-tricks.com/text-input-expanding-bottom-border/" target="_blank" rel="noopener">Text Input with Expanding Bottom Border</a> 一文。翻译有误，期待斧正。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>Petr Gazarov在他的文章<code>Text input highlight, TripAdvisor style</code>中使用了一个漂亮的小设计。</p>
+<p><img src="https://github.com/kuckboy1994/Blog/blob/master/gif/bb_oqufjg.webp?raw=true" alt=""></p>
+<p>这是一个花招，在文本框下面实现这样的伸缩效果是不能实现的，所以Petr使用了span标签来同步内容，表现上想是它有一个边框一样。整个过程像是一个响应式的组件。<br>
+        
+          <a class="article-more-a" href="/2017/11/14/给文本输入框增加下边框效果/#more">more >></a>
+        
       
 
       
@@ -427,7 +945,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/11/水平垂直居中/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/14/给文本输入框增加下边框效果/">展开全文 >></a>
         </p>
       
 
@@ -457,98 +975,10 @@
 
 
   
-    <article id="post-使用伪元素来形成类似“居中浮动”的效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/11/使用伪元素来形成类似“居中浮动”的效果/">使用伪元素来形成类似“居中浮动”的效果</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/11/使用伪元素来形成类似“居中浮动”的效果/" class="archive-article-date">
-  	<time datetime="2017-11-11T11:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文本翻译自 <a href="https://css-tricks.com/" target="_blank" rel="noopener">css-tricks</a> 网站的 <a href="https://css-tricks.com/float-center/" target="_blank" rel="noopener">Faking ‘float: center’ with Pseudo Elements</a> 一文。翻译有误，期待斧正。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>比方说，你想完成一个类似这样的布局：</p>
-<p><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/css-tricks/catinmiddle1.png" alt="catinmiddle1"></p>
-<p>这个展示效果没毛病吧？特别是你想把这个猫作为文章的重点。</p>
-<p>做到这一点其实并不容易。我们当前有的布局方法并不能真正的考虑到这一点。事实上，有时候觉得这种布局并没有真正的“网页设计”的思想。我说的对吗？我不认为即使有这种流通边缘的CSS布局系统就能很好地处理这个问题。这有点像float，因为文本环绕着图像，但是文本环绕两个方向，所以有点像<code>float: center;</code>居中浮动;或<code>float: both;</code>全部浮动，但这两个都是不存在的。</p>
-<p>但这是可以实现的！</p>
-<p>证明：<a href="https://css-tricks.com/examples/FloatBoth/" target="_blank" rel="noopener">查看</a> <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/css-tricks/float-both/index.html" target="_blank" rel="noopener">查看源码</a></p>
-<p>我们将通过使用浮动的伪元素占位符来实现它。每一<code>列①</code>放入一个伪元素占位符，一个左浮动，一个右浮动。伪元素的高度为图像的高度，宽度为图像的一半宽（差不多，不要忘记你还有padding和中间的槽【两列中间的分隔距离】需要考虑）。</p>
-<p>主要代码：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#l</span><span class="selector-pseudo">:before</span>, <span class="selector-id">#r</span><span class="selector-pseudo">:before</span> &#123; </span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">125px</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">250px</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#l</span><span class="selector-pseudo">:before</span> &#123; </span><br><span class="line">  <span class="attribute">float</span>: right; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#r</span><span class="selector-pseudo">:before</span> &#123; </span><br><span class="line">  <span class="attribute">float</span>: left; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/css-tricks/psuedoplaceholders.jpg" alt="psuedoplaceholders"></p>
-<p>现在文本中有一个洞，准备好把我们的图像放在那里。我们可以通过绝对定位来实现，就像在演示中那样。或者你可以把它放在上面的一个元素上，然后用负的顶部边缘来把文本拉出来。</p>
-<h2 id="标注："><a href="#标注：" class="headerlink" title="标注："></a>标注：</h2><ul>
-<li>列①： 注意，我们使用的是div来实现文本的列，而不是CSS列，虽然使用css来实现更酷，更具有语义化，但是用css的话我们上面的就不起作用了。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">翻译</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/11/使用伪元素来形成类似“居中浮动”的效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -642,6 +1072,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">翻译</a>
               </li>
              
@@ -650,11 +1084,59 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">规范</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BEM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">编辑器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注释</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">xss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
             <div class="clearfix"></div>
@@ -717,7 +1199,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">专注种多肉的前端一枚</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">专注种多肉的前端一枚&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a href=&#34;/简历&#34;&gt;简历&lt;/a&gt;</div>
   	  	
     	</section>
     
