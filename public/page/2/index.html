@@ -158,6 +158,251 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-讨论一下css命名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/讨论一下css命名/">讨论一下css命名</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/讨论一下css命名/" class="archive-article-date">
+  	<time datetime="2017-11-22T11:53:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现在开发中遇到的最头痛的事情莫过于给css命名了。好的命名可以快速的帮我们定位到页面中的元素，修改上也非常轻松。<br>幸运的是我们有 <code>BEM</code>。</p>
+<h2 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h2><p>块（block）、元素（element）、修饰符方法（modifier）(通常称为BEM)是HTML和CSS类中常用的命名约定。是由 <code>Yandex</code> 团队提出的，它的目标是帮助开发者更好地理解项目中的HTML和CSS之间的关系。</p>
+<ul>
+<li>B: block 是模块，或者称为一个组件。</li>
+<li>E: element 代表块中的元素（子节点），为了表明子节点属于哪个模块，写法是 <code>block__element</code> 。</li>
+<li>M：modifier 代表某个节点的修饰状态。</li>
+</ul>
+<p>下面是简单的例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span>&#123;&#125;    <span class="comment">/* 模块 */</span></span><br><span class="line"><span class="selector-class">.block--modifier</span>&#123;&#125;  <span class="comment">/* 当前模块的修饰符 */</span></span><br><span class="line"><span class="selector-class">.block__element</span>&#123;&#125;   <span class="comment">/* 模块下面的元素 */</span></span><br><span class="line"><span class="selector-class">.block__element--modifier</span>&#123;&#125; <span class="comment">/* 当前模块下面的元素的修饰符 */</span></span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/11/22/讨论一下css命名/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">规范</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BEM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/讨论一下css命名/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-获取id元素的“又”一种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/15/获取id元素的“又”一种方法/">获取id元素的“又”一种方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/15/获取id元素的“又”一种方法/" class="archive-article-date">
+  	<time datetime="2017-11-15T06:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="获取id元素的“又”一种方法"><a href="#获取id元素的“又”一种方法" class="headerlink" title="获取id元素的“又”一种方法"></a>获取id元素的“又”一种方法</h1><p>今天在偶然看到某大在掘金上面发了一篇文章<a href="https://juejin.im/post/5a0bae515188252964213855" target="_blank" rel="noopener">underscore 系列之如何写自己的 underscore</a>，渣渣的我就好奇的点进去看了起来。。。</p>
+<p>在关于 <strong>导出</strong> 的地方看到了</p>
+<blockquote>
+<p>typeof exports != ‘undefined’</p>
+</blockquote>
+<p>这样一句。</p>
+<p>纳尼？ <code>exports</code> 可以直接取到页面中的id为 <code>exports</code> 的元素。</p>
+<p>脑洞巨大的我抛下文章主要内容去查这个问题了。。。</p>
+<p>首先自己试验了一下 <a href="https://github.com/kuckboy1994/Blog/blob/master/demo/window/window.id.html" target="_blank" rel="noopener">demo</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"exports"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    alert(window.document.getElementById('exports') == window.exports);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在ie下下面也能完美运行。。</p>
+<p>问题来了，难道大家都不知道这个方法吗？还是这个方法有什么弊端，大家都避而不用？<br>
+        
+          <a class="article-more-a" href="/2017/11/15/获取id元素的“又”一种方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/15/获取id元素的“又”一种方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-给文本输入框增加下边框效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/14/给文本输入框增加下边框效果/">给文本输入框增加下边框效果</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/14/给文本输入框增加下边框效果/" class="archive-article-date">
+  	<time datetime="2017-11-14T03:57:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文本翻译自 <a href="https://css-tricks.com/" target="_blank" rel="noopener">css-tricks</a> 网站的 <a href="https://css-tricks.com/text-input-expanding-bottom-border/" target="_blank" rel="noopener">Text Input with Expanding Bottom Border</a> 一文。翻译有误，期待斧正。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>Petr Gazarov在他的文章<code>Text input highlight, TripAdvisor style</code>中使用了一个漂亮的小设计。</p>
+<p><img src="https://github.com/kuckboy1994/Blog/blob/master/gif/bb_oqufjg.webp?raw=true" alt=""></p>
+<p>这是一个花招，在文本框下面实现这样的伸缩效果是不能实现的，所以Petr使用了span标签来同步内容，表现上想是它有一个边框一样。整个过程像是一个响应式的组件。<br>
+        
+          <a class="article-more-a" href="/2017/11/14/给文本输入框增加下边框效果/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/14/给文本输入框增加下边框效果/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-用网页实现移动端横向纵向列固定的表格" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -590,7 +835,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,6 +848,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,6 +883,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
@@ -642,6 +903,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">建站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
@@ -650,11 +919,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>
