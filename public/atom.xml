@@ -5,9 +5,9 @@
   <subtitle>必须向前看，要犯就犯新的错误</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="//blog.kuckboy1994.com/"/>
-  <updated>2018-05-29T16:48:23.223Z</updated>
-  <id>//blog.kuckboy1994.com/</id>
+  <link href="//kuckboy1994.com/"/>
+  <updated>2018-07-03T15:57:41.125Z</updated>
+  <id>//kuckboy1994.com/</id>
   
   <author>
     <name>kuckboy1994</name>
@@ -17,13 +17,97 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>微信小程序解惑_收集用户的formid</title>
-    <link href="//blog.kuckboy1994.com/2018/05/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E6%94%B6%E9%9B%86%E7%94%A8%E6%88%B7%E7%9A%84formid/"/>
-    <id>//blog.kuckboy1994.com/2018/05/30/微信小程序解惑-收集用户的formid/</id>
-    <published>2018-05-29T16:33:57.000Z</published>
-    <updated>2018-05-29T16:48:23.223Z</updated>
+    <title>微信小程序解惑-视频滚动播放</title>
+    <link href="//kuckboy1994.com/2018/07/03/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E8%A7%86%E9%A2%91%E6%BB%9A%E5%8A%A8%E6%92%AD%E6%94%BE/"/>
+    <id>//kuckboy1994.com/2018/07/03/微信小程序解惑-视频滚动播放/</id>
+    <published>2018-07-03T15:57:41.000Z</published>
+    <updated>2018-07-03T15:57:41.125Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="我们为什么要收集用户的-formid-呢？"><a href="#我们为什么要收集用户的-formid-呢？" class="headerlink" title="我们为什么要收集用户的 formid 呢？"></a>我们为什么要收集用户的 <code>formid</code> 呢？</h2><p>因为我们可以用来 “干坏事”。比如给用户发送信息（服务通知）。</p><h2 id="如何收集formid"><a href="#如何收集formid" class="headerlink" title="如何收集formid"></a>如何收集formid</h2><p>要获取用户id，首先我们要有一个 <code>form</code> 表单组件。 只有在提交表单的时候才会有 <code>formid</code>，而且 <code>report-submit</code> 属性为 <code>true</code>。代码如下</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">bindsubmit</span>=<span class="string">"eventCollectFormId"</span> <span class="attr">report-submit</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span>&gt;</span></span><br><span class="line">    ....</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">form-type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 收集用户formId</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">eventCollectFormId (event) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event.detail.formId)</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>上面的代码是最少的代码了。并且是必须的，否则无法获取到 <code>formid</code>。<br><a id="more"></a></p><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p><code>form</code> 组件可以设置在页面的最外层。内部放置多个 <code>button</code>。统一调用一个 <code>bindsubmit</code> 事件。</p><p>要想尽可能多的获取 <code>formid</code> 又不想把所有的标签都使用 <code>button</code>，因为 <code>button</code> 修改样式的代缴是比较大的。可以使用悬浮的 <code>button</code> 。只要设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">opacity</span>: 0;</span><br></pre></td></tr></table></figure></p><p>把原来的事件放置到 <code>button</code> 上即可。</p><p><img src="http://wx3.sinaimg.cn/mw690/ec4d7780gy1frsobwh7psj20ai0cudhn.jpg" alt=""></p><p>红色框起来的地方，我在 <code>喜欢操作</code> 上方加了一个按钮，并且赋值了相应的属性。这样我们就在用户交互的时候同时获取了他的 <code>formid</code>。而且增加了用户的点击区域，优化了交互。</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://github.com/kuckboy1994/mp_scroll_play_demo" target="_blank" rel="noopener">项目地址</a> 欢迎star</p><h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><img src="https://wx4.sinaimg.cn/mw690/ec4d7780ly1fsvyopp7qig207v0dw1l5.gif" alt=""></p><ul><li>如果未正常显示gif，<a href="https://wx4.sinaimg.cn/mw690/ec4d7780ly1fsvyopp7qig207v0dw1l5.gif" target="_blank" rel="noopener">点击链接</a> 查看</li></ul><h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><ol><li>滚动到视频一半的位置，进行切换视频播放</li><li>记录所有视频的播放位置，再次切换回来的时候继续播放。</li><li>当播放视频滚出可见范围的时候，立刻停止播放（声音停止）。滚动停止的时候新的视频开始播放。</li><li>全屏播放。（这里存在一个坑，全屏的时候会立刻自动退出全屏）</li><li>基础上拉加载，上拉刷新（demo中未提现，配置下app.json即可实现）</li></ol><a id="more"></a><h2 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* global getApp Page wx */</span></span><br><span class="line"><span class="keyword">const</span> app = getApp()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基础版的防抖函数</span></span><br><span class="line"><span class="keyword">let</span> timeout</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span> (<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    clearTimeout(timeout)</span><br><span class="line">    timeout = setTimeout(func, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基础版的节流函数</span></span><br><span class="line"><span class="keyword">let</span> timeout2 = <span class="literal">null</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span> (<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!timeout2) &#123;</span><br><span class="line">      timeout2 = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(timeout2)</span><br><span class="line">        timeout2 = <span class="literal">null</span></span><br><span class="line">        func()</span><br><span class="line">      &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    width: wx.getSystemInfoSync().windowWidth,</span><br><span class="line">    height: wx.getSystemInfoSync().windowHeight,</span><br><span class="line"></span><br><span class="line">    videoLoading: <span class="literal">false</span>,</span><br><span class="line">    videoList: [],</span><br><span class="line"></span><br><span class="line">    location: [],</span><br><span class="line">    isLock: <span class="literal">false</span>,  <span class="comment">// 当前栗子无用，如果有些弹窗控制不住背后的视频列表滚动的话，isLock的作用就发挥出来了。</span></span><br><span class="line">    localIndex: <span class="number">0</span>,</span><br><span class="line">    noPageScroll: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  info: &#123;</span><br><span class="line">    videoPlayDetail: &#123;&#125; <span class="comment">// 存放所有视频的播放位置</span></span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad (options) &#123;</span><br><span class="line">    <span class="keyword">this</span>.getVideoList(<span class="number">1</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 分页获取视频</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  getVideoList (initPage) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; videoLoading, videoList &#125; = <span class="keyword">this</span>.data</span><br><span class="line">    <span class="keyword">if</span> (videoLoading) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      videoLoading: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 制造模拟数据</span></span><br><span class="line">    <span class="keyword">let</span> data = [&#123;</span><br><span class="line">      cover: <span class="string">'https://wx4.sinaimg.cn/mw690/ec4d7780ly1fsvx1996xoj20da07in0t.jpg'</span>,</span><br><span class="line">      src: <span class="string">'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'</span>,</span><br><span class="line">      width: <span class="number">480</span>,</span><br><span class="line">      height: <span class="number">272</span>,</span><br><span class="line">      title: <span class="string">'腾讯大学视频'</span>,</span><br><span class="line">      isPlay: <span class="literal">false</span></span><br><span class="line">    &#125;]</span><br><span class="line">    data = data.concat(data)</span><br><span class="line">    data = data.concat(data)</span><br><span class="line">    data = data.concat(data)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="comment">// 模拟请求</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">        videoList: videoList.concat(<span class="keyword">this</span>.formatVideoList(data)),</span><br><span class="line">        videoLoading: <span class="literal">false</span></span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="comment">// 给数据足够的渲染时间，之后进行视频位置的测量</span></span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.getLocationInfo()</span><br><span class="line">        <span class="keyword">if</span> (initPage) &#123; <span class="comment">// 如果是首次进入，就自动播放第一个视频</span></span><br><span class="line">          <span class="keyword">this</span>.showVideoList(<span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 格式化视频列表</span></span><br><span class="line"><span class="comment">   * @param &#123;Array&#125; videoList 需要格式化的视频列表</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  formatVideoList (videoList) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; width, height &#125; = <span class="keyword">this</span>.data</span><br><span class="line">    <span class="keyword">return</span> videoList.map(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> styleHight = width * value.height / value.width</span><br><span class="line">      styleHight = styleHight &gt; <span class="number">0.7</span> * height ? <span class="number">0.7</span> * height : styleHight</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...value,</span><br><span class="line">        styleHight: <span class="built_in">Math</span>.floor(styleHight),</span><br><span class="line">        currentTime: <span class="number">0</span>,</span><br><span class="line">        isPlay: <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 点击播放</span></span><br><span class="line">  eventPlay (event) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; index &#125; = event.currentTarget.dataset</span><br><span class="line">    <span class="keyword">this</span>.showVideoList(index)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 视频更新的时候不断的去记录播放的位置</span></span><br><span class="line">  eventPlayupdate (event) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; <span class="attr">detail</span>: &#123; currentTime &#125;, <span class="attr">currentTarget</span>: &#123; <span class="attr">dataset</span>: &#123; index &#125; &#125; &#125; = event</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.info.videoPlayDetail[index] = currentTime</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 到底加载更多</span></span><br><span class="line">  onReachBottom () &#123;</span><br><span class="line">    <span class="keyword">this</span>.getVideoList()</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 设置播放的视频</span></span><br><span class="line">  showVideoList (index) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index)</span><br><span class="line">    <span class="keyword">let</span> &#123; videoList &#125; = <span class="keyword">this</span>.data</span><br><span class="line">    videoList = videoList.map(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">      value.isPlay = <span class="literal">false</span></span><br><span class="line">      <span class="keyword">return</span> value</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= <span class="number">0</span> &amp;&amp; videoList[index]) &#123;</span><br><span class="line">      videoList[index].isPlay = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      videoList</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 全屏播放，设置当前页面滚动无效，全屏的时候，会触发滚动事件。</span></span><br><span class="line">  eventFullScreen (event) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event)</span><br><span class="line">    <span class="keyword">const</span> &#123; fullScreen &#125; = event.detail</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      noPageScroll: fullScreen</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  onPageScroll (&#123; scrollTop &#125;) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.data.noPageScroll) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 获取数据分别放置到各自的节流防抖函数中，防止调用的时候数据已近发生改变</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 节流，每200毫秒触发一次</span></span><br><span class="line">    throttle(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'throttle'</span>)</span><br><span class="line">      <span class="keyword">let</span> &#123; location, localIndex, videoList &#125; = <span class="keyword">this</span>.data</span><br><span class="line">      <span class="keyword">let</span> index = <span class="number">0</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; location.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (location[i].start &lt;= scrollTop &amp;&amp; location[i].end &gt;= scrollTop) &#123;</span><br><span class="line">          index = i</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (localIndex !== index) &#123;</span><br><span class="line">        videoList[localIndex].currentTime = <span class="keyword">this</span>.info.videoPlayDetail[localIndex]</span><br><span class="line">        <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">          videoList</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">this</span>.showVideoList()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">200</span>)()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 防抖，只触发一次</span></span><br><span class="line">    debounce(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'debounce'</span>)</span><br><span class="line">      <span class="keyword">let</span> &#123; location, isLock &#125; = <span class="keyword">this</span>.data</span><br><span class="line">      <span class="keyword">if</span> (!isLock) &#123;</span><br><span class="line">        <span class="keyword">let</span> index = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; location.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (location[i].start &lt;= scrollTop &amp;&amp; location[i].end &gt;= scrollTop) &#123;</span><br><span class="line">            index = i</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.showVideoList(index)</span><br><span class="line">        <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">          localIndex: index</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">200</span>)()</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 测量当前的所有视频的高度，计算出视频播放与否的位置</span></span><br><span class="line">  getLocationInfo () &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; videoList &#125; = <span class="keyword">this</span>.data</span><br><span class="line">    <span class="keyword">var</span> query = wx.createSelectorQuery()</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; videoList.length; i++) &#123;</span><br><span class="line">      query.select(<span class="string">`#video<span class="subst">$&#123;i&#125;</span>`</span>).boundingClientRect()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> length = videoList.length</span><br><span class="line">    <span class="keyword">const</span> location = []</span><br><span class="line">    query.exec(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> start = <span class="number">0</span></span><br><span class="line">      <span class="keyword">let</span> end = <span class="number">0</span></span><br><span class="line">      <span class="keyword">let</span> lei = <span class="number">0</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i === <span class="number">0</span>) &#123;</span><br><span class="line">          start = <span class="number">0</span></span><br><span class="line">          end = videoList[i][<span class="string">'styleHight'</span>] / <span class="number">2</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          start = end</span><br><span class="line">          end = lei + videoList[i][<span class="string">'styleHight'</span>] / <span class="number">2</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location.push(&#123;</span><br><span class="line">          start: start,</span><br><span class="line">          end: end</span><br><span class="line">        &#125;)</span><br><span class="line">        lei = lei + res[i].height + <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">        location</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/kuckboy1994/mp_scroll_play_demo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;项目地址&lt;/a&gt; 欢迎star&lt;/p&gt;
+&lt;h2 id=&quot;演示&quot;&gt;&lt;a href=&quot;#演示&quot; class=&quot;headerlink&quot; title=&quot;演示&quot;&gt;&lt;/a&gt;演示&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/mw690/ec4d7780ly1fsvyopp7qig207v0dw1l5.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果未正常显示gif，&lt;a href=&quot;https://wx4.sinaimg.cn/mw690/ec4d7780ly1fsvyopp7qig207v0dw1l5.gif&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击链接&lt;/a&gt; 查看&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;功能介绍&quot;&gt;&lt;a href=&quot;#功能介绍&quot; class=&quot;headerlink&quot; title=&quot;功能介绍&quot;&gt;&lt;/a&gt;功能介绍&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;滚动到视频一半的位置，进行切换视频播放&lt;/li&gt;
+&lt;li&gt;记录所有视频的播放位置，再次切换回来的时候继续播放。&lt;/li&gt;
+&lt;li&gt;当播放视频滚出可见范围的时候，立刻停止播放（声音停止）。滚动停止的时候新的视频开始播放。&lt;/li&gt;
+&lt;li&gt;全屏播放。（这里存在一个坑，全屏的时候会立刻自动退出全屏）&lt;/li&gt;
+&lt;li&gt;基础上拉加载，上拉刷新（demo中未提现，配置下app.json即可实现）&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="微信小程序" scheme="//kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序解惑-常见的css问题</title>
+    <link href="//kuckboy1994.com/2018/05/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E5%B8%B8%E8%A7%81%E7%9A%84css%E9%97%AE%E9%A2%98/"/>
+    <id>//kuckboy1994.com/2018/05/30/微信小程序解惑-常见的css问题/</id>
+    <published>2018-05-30T15:03:01.000Z</published>
+    <updated>2018-05-30T15:40:16.475Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="在-scroll-view-中-padding-会对内部元素的-position-absolute-产生影响"><a href="#在-scroll-view-中-padding-会对内部元素的-position-absolute-产生影响" class="headerlink" title="在 scroll-view 中 padding 会对内部元素的 position: absolute 产生影响"></a>在 <code>scroll-view</code> 中 <code>padding</code> 会对内部元素的 <code>position: absolute</code> 产生影响</h3><p><code>padding</code> 在 <code>scroll-view</code> 中的效果有点像 <code>margin</code> 。</p><p>例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"square"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></span><br></pre></td></tr></table></figure></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">500</span>rpx;</span><br><span class="line">  <span class="attribute">background</span>: white;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.square</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100</span>rpx;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><p>效果如下：</p><p><img src="http://wx2.sinaimg.cn/mw690/ec4d7780gy1frtrw0nlj3j209009mmx7.jpg" alt=""></p><p>在 <code>.box</code> 上增加 <code>padding</code></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">500</span>rpx;</span><br><span class="line">  <span class="attribute">background</span>: white;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">100</span>rpx; </span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>效果如下：</p><p><img src="http://wx1.sinaimg.cn/mw690/ec4d7780gy1frtrw4o2ifj208x09cdfv.jpg" alt=""></p><p>应该是 <code>scroll-view</code> 组件封装的时候没有考虑到 <code>padding</code> 的影响吧。或者官方认为这个遇到问题可以通过调节元素的层级关系来解决而没有去解决的一个疑难杂症？😂</p><h3 id="图片下方存在留白"><a href="#图片下方存在留白" class="headerlink" title="图片下方存在留白"></a>图片下方存在留白</h3><p><img src="http://wx3.sinaimg.cn/mw690/ec4d7780gy1frtsk7ft47j208y0f7wgn.jpg" alt=""></p><p>和正常的网页处理方式一致。</p><ul><li><p>修改 <code>vertical-align</code>, 默认是 <code>baseline</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align: middle;</span><br></pre></td></tr></table></figure></li><li><p>修改 <code>display</code>, 默认是 <code>inline</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: block;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;在-scroll-view-中-padding-会对内部元素的-position-absolute-产生影响&quot;&gt;&lt;a href=&quot;#在-scroll-view-中-padding-会对内部元素的-position-absolute-产生影响&quot; class=&quot;headerlink&quot; title=&quot;在 scroll-view 中 padding 会对内部元素的 position: absolute 产生影响&quot;&gt;&lt;/a&gt;在 &lt;code&gt;scroll-view&lt;/code&gt; 中 &lt;code&gt;padding&lt;/code&gt; 会对内部元素的 &lt;code&gt;position: absolute&lt;/code&gt; 产生影响&lt;/h3&gt;&lt;p&gt;&lt;code&gt;padding&lt;/code&gt; 在 &lt;code&gt;scroll-view&lt;/code&gt; 中的效果有点像 &lt;code&gt;margin&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;例如：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;scroll-view&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;box&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;square&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;view&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;scroll-view&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;rpx;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;rpx;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: white;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;box-sizing&lt;/span&gt;: border-box;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.square&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: absolute;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;rpx;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;rpx;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="微信小程序" scheme="//kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="css" scheme="//kuckboy1994.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序解惑-横向滚动列表</title>
+    <link href="//kuckboy1994.com/2018/05/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E6%A8%AA%E5%90%91%E6%BB%9A%E5%8A%A8%E5%88%97%E8%A1%A8/"/>
+    <id>//kuckboy1994.com/2018/05/30/微信小程序解惑-横向滚动列表/</id>
+    <published>2018-05-30T14:45:35.000Z</published>
+    <updated>2018-05-30T15:22:39.415Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>设置横向滚动列表，除了我们常见的设置</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow-x</span>: <span class="selector-tag">auto</span>;</span><br></pre></td></tr></table></figure><p>这样设置出来的列表滚动起来比较 <code>涩</code> 。滚动起来不够流畅。</p><ul><li>还有一种做法就是使用 <code>scroll-view</code> 组件</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">class</span>=<span class="string">"share-list"</span> <span class="attr">scroll-x</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"share-item"</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;[1,2,3,4,5,6]&#125;&#125;"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.share-list</span> &#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><p>样式中一定要设置 <code>white-space: nowrap;</code> 否则不能滚动。</p><p><img src="http://wx3.sinaimg.cn/mw690/ec4d7780gy1frtre5rolqg206j0bchdu.gif" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;设置横向滚动列表，除了我们常见的设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;overflow-x&lt;/span&gt;: &lt;span class=&quot;selector-tag&quot;&gt;auto&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样设置出来的列表滚动起来比较 &lt;code&gt;涩&lt;/code&gt; 。滚动起来不够流畅。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;还有一种做法就是使用 &lt;code&gt;scroll-view&lt;/code&gt; 组件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;scroll-view&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;share-list&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scroll-x&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&amp;#123;&amp;#123;true&amp;#125;&amp;#125;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;share-item&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;wx:for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&amp;#123;&amp;#123;[1,2,3,4,5,6]&amp;#125;&amp;#125;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;view&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;scroll-view&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.share-list&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/* ... */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;white-space&lt;/span&gt;: nowrap;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="微信小程序" scheme="//kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序解惑_收集用户的formid</title>
+    <link href="//kuckboy1994.com/2018/05/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E6%94%B6%E9%9B%86%E7%94%A8%E6%88%B7%E7%9A%84formid/"/>
+    <id>//kuckboy1994.com/2018/05/30/微信小程序解惑-收集用户的formid/</id>
+    <published>2018-05-29T16:33:57.000Z</published>
+    <updated>2018-05-31T14:30:53.258Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="我们为什么要收集用户的-formid-呢？"><a href="#我们为什么要收集用户的-formid-呢？" class="headerlink" title="我们为什么要收集用户的 formid 呢？"></a>我们为什么要收集用户的 <code>formid</code> 呢？</h2><p>因为我们可以用来 “干坏事”。比如给用户发送信息（服务通知）。</p><h2 id="如何收集formid"><a href="#如何收集formid" class="headerlink" title="如何收集formid"></a>如何收集formid</h2><p>要获取用户id，首先我们要有一个 <code>form</code> 表单组件。 只有在提交表单的时候才会有 <code>formid</code>，而且 <code>report-submit</code> 属性为 <code>true</code>。代码如下</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">bindsubmit</span>=<span class="string">"eventCollectFormId"</span> <span class="attr">report-submit</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span>&gt;</span></span><br><span class="line">    ....</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">form-type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 收集用户formId</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">eventCollectFormId (event) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event.detail.formId)</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>上面的代码是最少的代码了。并且是必须的，否则无法获取到 <code>formid</code>。</p><a id="more"></a><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p><code>form</code> 组件可以设置在页面的最外层。内部放置多个 <code>button</code>。统一调用一个 <code>bindsubmit</code> 事件。</p><p>要想尽可能多的获取 <code>formid</code> 又不想把所有的标签都使用 <code>button</code>，因为 <code>button</code> 修改样式的代缴是比较大的。可以使用悬浮的 <code>button</code> 。只要设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">opacity</span>: 0;</span><br></pre></td></tr></table></figure></p><p>把原来的事件放置到 <code>button</code> 上即可。</p><p><img src="http://wx3.sinaimg.cn/mw690/ec4d7780gy1frsobwh7psj20ai0cudhn.jpg" alt=""></p><p>红色框起来的地方，我在 <code>喜欢操作</code> 上方加了一个按钮，并且赋值了相应的属性。这样我们就在用户交互的时候同时获取了他的 <code>formid</code>。而且增加了用户的点击区域，优化了交互。</p>]]></content>
     
     <summary type="html">
     
@@ -31,27 +115,27 @@
 &lt;h2 id=&quot;如何收集formid&quot;&gt;&lt;a href=&quot;#如何收集formid&quot; class=&quot;headerlink&quot; title=&quot;如何收集formid&quot;&gt;&lt;/a&gt;如何收集formid&lt;/h2&gt;&lt;p&gt;要获取用户id，首先我们要有一个 &lt;code&gt;form&lt;/code&gt; 表单组件。 只有在提交表单的时候才会有 &lt;code&gt;formid&lt;/code&gt;，而且 &lt;code&gt;report-submit&lt;/code&gt; 属性为 &lt;code&gt;true&lt;/code&gt;。代码如下&lt;/p&gt;
 &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- wxml --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;bindsubmit&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;eventCollectFormId&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;report-submit&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&amp;#123;&amp;#123;true&amp;#125;&amp;#125;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;form-type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;提交&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;* 收集用户formId&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;eventCollectFormId (event) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(event.detail.formId)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面的代码是最少的代码了。并且是必须的，否则无法获取到 &lt;code&gt;formid&lt;/code&gt;。&lt;br&gt;
+&lt;p&gt;上面的代码是最少的代码了。并且是必须的，否则无法获取到 &lt;code&gt;formid&lt;/code&gt;。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="微信小程序" scheme="//blog.kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="//kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序解惑-组件button详解</title>
-    <link href="//blog.kuckboy1994.com/2018/05/29/%08%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E7%BB%84%E4%BB%B6button%E8%AF%A6%E8%A7%A3/"/>
-    <id>//blog.kuckboy1994.com/2018/05/29/微信小程序解惑-组件button详解/</id>
+    <link href="//kuckboy1994.com/2018/05/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E6%83%91-%E7%BB%84%E4%BB%B6button%E8%AF%A6%E8%A7%A3/"/>
+    <id>//kuckboy1994.com/2018/05/29/微信小程序解惑-组件button详解/</id>
     <published>2018-05-29T15:50:56.000Z</published>
-    <updated>2018-05-29T16:48:43.419Z</updated>
+    <updated>2018-05-31T15:00:03.022Z</updated>
     
     <content type="html"><![CDATA[<p>我们在小程序开发的时候，会有这样的需求，设置一个透明的 <code>button</code>。为什么要用 <code>button</code> 呢？因为 <code>button</code> 有很多的开放功能，例如：获取用户信息、分享、调起会话、获取用户手机号、启动外部App、打开设置页。</p><p>问题来了，设置透明的 <code>button</code> 到底该怎么实现呢？</p><p>设置 <code>background: transparent</code> 是无效的。我们需要设置按钮 <code>镂空</code>。 如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">plain</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>但是。。。 为什么是这样的？<br><img src="http://wx4.sinaimg.cn/mw690/ec4d7780gy1frsmrk5mucj208v0al74e.jpg" alt=""><br><a id="more"></a><br>尝试设置一下 <code>CSS</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border: none;</span><br></pre></td></tr></table></figure></p><p>完全没有效果呀？</p><p><img src="http://wx1.sinaimg.cn/mw690/ec4d7780gy1frsmvt9q1gj20c00b143h.jpg" alt=""></p><p>最终的解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button::after &#123;</span><br><span class="line">  border: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>在根目录下的 <code>app.wxss</code> 添加如上代码修改所有 <code>button</code> 的效果。<br>猜测官方的 <code>button</code> 组件使用的是 <code>::after</code> 伪类的方式实现边框的。遇到同类问题可以在 <code>::after</code> 上做尝试。 例如: <code>border-radius</code>。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;我们在小程序开发的时候，会有这样的需求，设置一个透明的 &lt;code&gt;button&lt;/code&gt;。为什么要用 &lt;code&gt;button&lt;/code&gt; 呢？因为 &lt;code&gt;button&lt;/code&gt; 有很多的开放功能，例如：获取用户信息、分享、调起会话、获取用户手机号、启动外部App、打开设置页。&lt;/p&gt;
+      &lt;p&gt;我们在小程序开发的时候，会有这样的需求，设置一个透明的 &lt;code&gt;button&lt;/code&gt;。为什么要用 &lt;code&gt;button&lt;/code&gt; 呢？因为 &lt;code&gt;button&lt;/code&gt; 有很多的开放功能，例如：获取用户信息、分享、调起会话、获取用户手机号、启动外部App、打开设置页。&lt;/p&gt;
 &lt;p&gt;问题来了，设置透明的 &lt;code&gt;button&lt;/code&gt; 到底该怎么实现呢？&lt;/p&gt;
 &lt;p&gt;设置 &lt;code&gt;background: transparent&lt;/code&gt; 是无效的。我们需要设置按钮 &lt;code&gt;镂空&lt;/code&gt;。 如下：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;plain&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&amp;#123;&amp;#123;true&amp;#125;&amp;#125;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;确定&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;但是。。。 为什么是这样的？&lt;br&gt;&lt;img src=&quot;http://wx4.sinaimg.cn/mw690/ec4d7780gy1frsmrk5mucj208v0al74e.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
@@ -59,14 +143,14 @@
     </summary>
     
     
-      <category term="微信小程序" scheme="//blog.kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="//kuckboy1994.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>hexo博客搭建指南</title>
-    <link href="//blog.kuckboy1994.com/2018/05/28/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/"/>
-    <id>//blog.kuckboy1994.com/2018/05/28/hexo博客搭建指南/</id>
+    <link href="//kuckboy1994.com/2018/05/28/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/"/>
+    <id>//kuckboy1994.com/2018/05/28/hexo博客搭建指南/</id>
     <published>2018-05-28T15:38:36.000Z</published>
     <updated>2018-05-29T16:49:31.877Z</updated>
     
@@ -89,16 +173,16 @@
     </summary>
     
     
-      <category term="hexo" scheme="//blog.kuckboy1994.com/tags/hexo/"/>
+      <category term="hexo" scheme="//kuckboy1994.com/tags/hexo/"/>
     
-      <category term="建站" scheme="//blog.kuckboy1994.com/tags/%E5%BB%BA%E7%AB%99/"/>
+      <category term="建站" scheme="//kuckboy1994.com/tags/%E5%BB%BA%E7%AB%99/"/>
     
   </entry>
   
   <entry>
     <title>XSS攻击</title>
-    <link href="//blog.kuckboy1994.com/2018/01/02/XSS%E6%94%BB%E5%87%BB/"/>
-    <id>//blog.kuckboy1994.com/2018/01/02/XSS攻击/</id>
+    <link href="//kuckboy1994.com/2018/01/02/XSS%E6%94%BB%E5%87%BB/"/>
+    <id>//kuckboy1994.com/2018/01/02/XSS攻击/</id>
     <published>2018-01-02T06:22:16.000Z</published>
     <updated>2018-05-28T15:12:36.420Z</updated>
     
@@ -113,18 +197,18 @@
     </summary>
     
     
-      <category term="xss" scheme="//blog.kuckboy1994.com/tags/xss/"/>
+      <category term="xss" scheme="//kuckboy1994.com/tags/xss/"/>
     
   </entry>
   
   <entry>
     <title>获取本机的ip地址</title>
-    <link href="//blog.kuckboy1994.com/2017/12/26/%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BA%E7%9A%84ip%E5%9C%B0%E5%9D%80/"/>
-    <id>//blog.kuckboy1994.com/2017/12/26/获取本机的ip地址/</id>
+    <link href="//kuckboy1994.com/2017/12/26/%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BA%E7%9A%84ip%E5%9C%B0%E5%9D%80/"/>
+    <id>//kuckboy1994.com/2017/12/26/获取本机的ip地址/</id>
     <published>2017-12-26T06:20:54.000Z</published>
-    <updated>2018-05-08T06:21:50.182Z</updated>
+    <updated>2018-05-30T15:45:54.621Z</updated>
     
-    <content type="html"><![CDATA[<p>有的时候我们需要知道我们本地机器的ip地址。</p><p>前端项目大部分都是通过localhost:端口号来运行的，但是比如我们要写RN的时候，在安卓模拟器中的我们可能就不能直接使用<code>localhost</code>或<code>127.0.0.1</code>，使用的应该是局域网给我们动态分配的ip地址。</p><p>下面介绍两种三种方式获得动态分配的ip地址：</p><h2 id="图形化获取"><a href="#图形化获取" class="headerlink" title="图形化获取"></a>图形化获取</h2><ol><li>打开偏好设置，点击网络<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png" alt=""><a id="more"></a></li><li>红框圈起来的就是ip地址<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip2.png" alt=""></li></ol><h2 id="命令行获取"><a href="#命令行获取" class="headerlink" title="命令行获取"></a>命令行获取</h2><ol><li>打开<code>terminal</code><br>输入<code>ifconfig</code>。注意不是<code>ipconfig</code><br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip3.png" alt=""></li></ol><h2 id="程序获取"><a href="#程序获取" class="headerlink" title="程序获取"></a>程序获取</h2><p>每次链接wifi的时候，我们的ip可能就会被重新分配，每次去走上面一遍可能会比较麻烦，有没有上面比较高级的方式获取呢。</p><ol><li>首先需要node环境</li><li>在对应的程序下安装<code>address</code>包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line">npm install --save-dev</span><br></pre></td></tr></table></figure></li></ol><p>为了演示简单，单独写一个文件，例如：getIpAddress.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> address = <span class="built_in">require</span>(<span class="string">'address'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(address.ip())</span><br></pre></td></tr></table></figure></p><p>使用node运行。<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip4.png" alt=""></p><p>有了上述的方法，我们就可以在程序启动的时候，告诉开发者（我们自己）当前的ip地址是多少，我们就能直接去模拟器中打开了。<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip5.png" alt=""><br><code>address</code>包还可以获取<code>IPv6</code>和<code>MAC</code>地址。详细查看 <a href="https://www.npmjs.com/package/address" target="_blank" rel="noopener">address-npm</a></p>]]></content>
+    <content type="html"><![CDATA[<p>有的时候我们需要知道我们本地机器的ip地址。</p><p>前端项目大部分都是通过localhost:端口号来运行的，但是比如我们要写RN的时候，在安卓模拟器中的我们可能就不能直接使用<code>localhost</code>或<code>127.0.0.1</code>，使用的应该是局域网给我们动态分配的ip地址。</p><p>下面介绍两种三种方式获得动态分配的ip地址：</p><h2 id="图形化获取"><a href="#图形化获取" class="headerlink" title="图形化获取"></a>图形化获取</h2><ol><li>打开偏好设置，点击网络</li></ol><p><img style="width:600px;" src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png"><br><!-- ![](https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png) --><br><a id="more"></a></p><ol start="2"><li>红框圈起来的就是ip地址</li></ol><p><img style="width:600px;" src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip2.png"><br><!-- ![](https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip2.png) --></p><h2 id="命令行获取"><a href="#命令行获取" class="headerlink" title="命令行获取"></a>命令行获取</h2><ol><li>打开<code>terminal</code><br>输入<code>ifconfig</code>。注意不是<code>ipconfig</code></li></ol><p><img style="width:600px;" src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip3.png"><br><!-- ![](https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip3.png) --></p><h2 id="程序获取"><a href="#程序获取" class="headerlink" title="程序获取"></a>程序获取</h2><p>每次链接wifi的时候，我们的ip可能就会被重新分配，每次去走上面一遍可能会比较麻烦，有没有上面比较高级的方式获取呢。</p><ol><li>首先需要node环境</li><li>在对应的程序下安装 <code>address</code> 包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line">npm install address --save-dev</span><br></pre></td></tr></table></figure></li></ol><p>为了演示简单，单独写一个文件，例如：getIpAddress.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> address = <span class="built_in">require</span>(<span class="string">'address'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(address.ip())</span><br></pre></td></tr></table></figure></p><p>使用node运行。</p><p><img style="width:600px;" src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip4.png"><br><!-- ![](https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip4.png) --></p><p>有了上述的方法，我们就可以在程序启动的时候，告诉开发者（我们自己）当前的ip地址是多少，我们就能直接去模拟器中打开了。</p><p><img style="width:600px;" src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip5.png"><br><!-- ![](https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip5.png) --><br><code>address</code>包还可以获取<code>IPv6</code>和<code>MAC</code>地址。详细查看 <a href="https://www.npmjs.com/package/address" target="_blank" rel="noopener">address-npm</a></p>]]></content>
     
     <summary type="html">
     
@@ -132,19 +216,21 @@
 &lt;p&gt;前端项目大部分都是通过localhost:端口号来运行的，但是比如我们要写RN的时候，在安卓模拟器中的我们可能就不能直接使用&lt;code&gt;localhost&lt;/code&gt;或&lt;code&gt;127.0.0.1&lt;/code&gt;，使用的应该是局域网给我们动态分配的ip地址。&lt;/p&gt;
 &lt;p&gt;下面介绍两种三种方式获得动态分配的ip地址：&lt;/p&gt;
 &lt;h2 id=&quot;图形化获取&quot;&gt;&lt;a href=&quot;#图形化获取&quot; class=&quot;headerlink&quot; title=&quot;图形化获取&quot;&gt;&lt;/a&gt;图形化获取&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;打开偏好设置，点击网络&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png&quot; alt=&quot;&quot;&gt;
+&lt;li&gt;打开偏好设置，点击网络&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img style=&quot;width:600px;&quot; src=&quot;https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png&quot;&gt;&lt;br&gt;&lt;!-- ![](https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/node/getIpAddress/ip1.png) --&gt;&lt;br&gt;
     
     </summary>
     
     
-      <category term="mac" scheme="//blog.kuckboy1994.com/tags/mac/"/>
+      <category term="mac" scheme="//kuckboy1994.com/tags/mac/"/>
     
   </entry>
   
   <entry>
     <title>前端优化</title>
-    <link href="//blog.kuckboy1994.com/2017/12/21/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
-    <id>//blog.kuckboy1994.com/2017/12/21/前端优化/</id>
+    <link href="//kuckboy1994.com/2017/12/21/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
+    <id>//kuckboy1994.com/2017/12/21/前端优化/</id>
     <published>2017-12-21T06:19:27.000Z</published>
     <updated>2018-05-08T06:20:25.130Z</updated>
     
@@ -160,16 +246,16 @@
     </summary>
     
     
-      <category term="优化" scheme="//blog.kuckboy1994.com/tags/%E4%BC%98%E5%8C%96/"/>
+      <category term="优化" scheme="//kuckboy1994.com/tags/%E4%BC%98%E5%8C%96/"/>
     
-      <category term="前端" scheme="//blog.kuckboy1994.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="//kuckboy1994.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>项目小结（一）</title>
-    <link href="//blog.kuckboy1994.com/2017/12/20/%E9%A1%B9%E7%9B%AE%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>//blog.kuckboy1994.com/2017/12/20/项目小结（一）/</id>
+    <link href="//kuckboy1994.com/2017/12/20/%E9%A1%B9%E7%9B%AE%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>//kuckboy1994.com/2017/12/20/项目小结（一）/</id>
     <published>2017-12-20T06:17:20.000Z</published>
     <updated>2018-05-08T07:34:15.172Z</updated>
     
@@ -183,18 +269,18 @@
     </summary>
     
     
-      <category term="vue" scheme="//blog.kuckboy1994.com/tags/vue/"/>
+      <category term="vue" scheme="//kuckboy1994.com/tags/vue/"/>
     
-      <category term="vuex" scheme="//blog.kuckboy1994.com/tags/vuex/"/>
+      <category term="vuex" scheme="//kuckboy1994.com/tags/vuex/"/>
     
-      <category term="svg" scheme="//blog.kuckboy1994.com/tags/svg/"/>
+      <category term="svg" scheme="//kuckboy1994.com/tags/svg/"/>
     
   </entry>
   
   <entry>
     <title>注释规范</title>
-    <link href="//blog.kuckboy1994.com/2017/12/04/%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/"/>
-    <id>//blog.kuckboy1994.com/2017/12/04/注释规范/</id>
+    <link href="//kuckboy1994.com/2017/12/04/%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/"/>
+    <id>//kuckboy1994.com/2017/12/04/注释规范/</id>
     <published>2017-12-04T06:11:33.000Z</published>
     <updated>2018-05-08T06:12:37.010Z</updated>
     
@@ -220,16 +306,16 @@
     </summary>
     
     
-      <category term="规范" scheme="//blog.kuckboy1994.com/tags/%E8%A7%84%E8%8C%83/"/>
+      <category term="规范" scheme="//kuckboy1994.com/tags/%E8%A7%84%E8%8C%83/"/>
     
-      <category term="注释" scheme="//blog.kuckboy1994.com/tags/%E6%B3%A8%E9%87%8A/"/>
+      <category term="注释" scheme="//kuckboy1994.com/tags/%E6%B3%A8%E9%87%8A/"/>
     
   </entry>
   
   <entry>
     <title>vi-vim</title>
-    <link href="//blog.kuckboy1994.com/2017/12/03/vi-vim/"/>
-    <id>//blog.kuckboy1994.com/2017/12/03/vi-vim/</id>
+    <link href="//kuckboy1994.com/2017/12/03/vi-vim/"/>
+    <id>//kuckboy1994.com/2017/12/03/vi-vim/</id>
     <published>2017-12-03T06:09:48.000Z</published>
     <updated>2018-05-08T06:11:01.018Z</updated>
     
@@ -243,16 +329,16 @@
     </summary>
     
     
-      <category term="linux" scheme="//blog.kuckboy1994.com/tags/linux/"/>
+      <category term="linux" scheme="//kuckboy1994.com/tags/linux/"/>
     
-      <category term="编辑器" scheme="//blog.kuckboy1994.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+      <category term="编辑器" scheme="//kuckboy1994.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>laydate日历组件改造心得</title>
-    <link href="//blog.kuckboy1994.com/2017/11/30/laydate%E6%97%A5%E5%8E%86%E7%BB%84%E4%BB%B6%E6%94%B9%E9%80%A0%E5%BF%83%E5%BE%97/"/>
-    <id>//blog.kuckboy1994.com/2017/11/30/laydate日历组件改造心得/</id>
+    <link href="//kuckboy1994.com/2017/11/30/laydate%E6%97%A5%E5%8E%86%E7%BB%84%E4%BB%B6%E6%94%B9%E9%80%A0%E5%BF%83%E5%BE%97/"/>
+    <id>//kuckboy1994.com/2017/11/30/laydate日历组件改造心得/</id>
     <published>2017-11-30T06:07:38.000Z</published>
     <updated>2018-05-08T06:11:15.190Z</updated>
     
@@ -276,8 +362,8 @@
   
   <entry>
     <title>讨论一下css命名</title>
-    <link href="//blog.kuckboy1994.com/2017/11/22/%E8%AE%A8%E8%AE%BA%E4%B8%80%E4%B8%8Bcss%E5%91%BD%E5%90%8D/"/>
-    <id>//blog.kuckboy1994.com/2017/11/22/讨论一下css命名/</id>
+    <link href="//kuckboy1994.com/2017/11/22/%E8%AE%A8%E8%AE%BA%E4%B8%80%E4%B8%8Bcss%E5%91%BD%E5%90%8D/"/>
+    <id>//kuckboy1994.com/2017/11/22/讨论一下css命名/</id>
     <published>2017-11-22T11:53:52.000Z</published>
     <updated>2018-05-08T06:07:22.000Z</updated>
     
@@ -297,18 +383,18 @@
     </summary>
     
     
-      <category term="CSS" scheme="//blog.kuckboy1994.com/tags/CSS/"/>
+      <category term="CSS" scheme="//kuckboy1994.com/tags/CSS/"/>
     
-      <category term="规范" scheme="//blog.kuckboy1994.com/tags/%E8%A7%84%E8%8C%83/"/>
+      <category term="规范" scheme="//kuckboy1994.com/tags/%E8%A7%84%E8%8C%83/"/>
     
-      <category term="BEM" scheme="//blog.kuckboy1994.com/tags/BEM/"/>
+      <category term="BEM" scheme="//kuckboy1994.com/tags/BEM/"/>
     
   </entry>
   
   <entry>
     <title>获取id元素的“又”一种方法</title>
-    <link href="//blog.kuckboy1994.com/2017/11/15/%E8%8E%B7%E5%8F%96id%E5%85%83%E7%B4%A0%E7%9A%84%E2%80%9C%E5%8F%88%E2%80%9D%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>//blog.kuckboy1994.com/2017/11/15/获取id元素的“又”一种方法/</id>
+    <link href="//kuckboy1994.com/2017/11/15/%E8%8E%B7%E5%8F%96id%E5%85%83%E7%B4%A0%E7%9A%84%E2%80%9C%E5%8F%88%E2%80%9D%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>//kuckboy1994.com/2017/11/15/获取id元素的“又”一种方法/</id>
     <published>2017-11-15T06:04:14.000Z</published>
     <updated>2018-05-08T06:06:25.000Z</updated>
     
@@ -335,8 +421,8 @@
   
   <entry>
     <title>给文本输入框增加下边框效果</title>
-    <link href="//blog.kuckboy1994.com/2017/11/14/%E7%BB%99%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%A1%86%E5%A2%9E%E5%8A%A0%E4%B8%8B%E8%BE%B9%E6%A1%86%E6%95%88%E6%9E%9C/"/>
-    <id>//blog.kuckboy1994.com/2017/11/14/给文本输入框增加下边框效果/</id>
+    <link href="//kuckboy1994.com/2017/11/14/%E7%BB%99%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%A1%86%E5%A2%9E%E5%8A%A0%E4%B8%8B%E8%BE%B9%E6%A1%86%E6%95%88%E6%9E%9C/"/>
+    <id>//kuckboy1994.com/2017/11/14/给文本输入框增加下边框效果/</id>
     <published>2017-11-14T03:57:53.000Z</published>
     <updated>2018-05-08T03:59:14.484Z</updated>
     
@@ -352,14 +438,14 @@
     </summary>
     
     
-      <category term="CSS" scheme="//blog.kuckboy1994.com/tags/CSS/"/>
+      <category term="CSS" scheme="//kuckboy1994.com/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>水平垂直居中</title>
-    <link href="//blog.kuckboy1994.com/2017/11/11/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
-    <id>//blog.kuckboy1994.com/2017/11/11/水平垂直居中/</id>
+    <link href="//kuckboy1994.com/2017/11/11/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+    <id>//kuckboy1994.com/2017/11/11/水平垂直居中/</id>
     <published>2017-11-11T11:52:36.000Z</published>
     <updated>2018-05-08T03:52:35.000Z</updated>
     
@@ -379,14 +465,14 @@
     </summary>
     
     
-      <category term="CSS" scheme="//blog.kuckboy1994.com/tags/CSS/"/>
+      <category term="CSS" scheme="//kuckboy1994.com/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>使用伪元素来形成类似“居中浮动”的效果</title>
-    <link href="//blog.kuckboy1994.com/2017/11/11/%E4%BD%BF%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E6%9D%A5%E5%BD%A2%E6%88%90%E7%B1%BB%E4%BC%BC%E2%80%9C%E5%B1%85%E4%B8%AD%E6%B5%AE%E5%8A%A8%E2%80%9D%E7%9A%84%E6%95%88%E6%9E%9C/"/>
-    <id>//blog.kuckboy1994.com/2017/11/11/使用伪元素来形成类似“居中浮动”的效果/</id>
+    <link href="//kuckboy1994.com/2017/11/11/%E4%BD%BF%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E6%9D%A5%E5%BD%A2%E6%88%90%E7%B1%BB%E4%BC%BC%E2%80%9C%E5%B1%85%E4%B8%AD%E6%B5%AE%E5%8A%A8%E2%80%9D%E7%9A%84%E6%95%88%E6%9E%9C/"/>
+    <id>//kuckboy1994.com/2017/11/11/使用伪元素来形成类似“居中浮动”的效果/</id>
     <published>2017-11-11T11:50:41.000Z</published>
     <updated>2018-05-08T03:53:21.579Z</updated>
     
@@ -404,16 +490,16 @@
     </summary>
     
     
-      <category term="翻译" scheme="//blog.kuckboy1994.com/tags/%E7%BF%BB%E8%AF%91/"/>
+      <category term="翻译" scheme="//kuckboy1994.com/tags/%E7%BF%BB%E8%AF%91/"/>
     
-      <category term="CSS" scheme="//blog.kuckboy1994.com/tags/CSS/"/>
+      <category term="CSS" scheme="//kuckboy1994.com/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>谈一谈一年来的经历</title>
-    <link href="//blog.kuckboy1994.com/2017/11/05/%E8%B0%88%E4%B8%80%E8%B0%88%E4%B8%80%E5%B9%B4%E6%9D%A5%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
-    <id>//blog.kuckboy1994.com/2017/11/05/谈一谈一年来的经历/</id>
+    <link href="//kuckboy1994.com/2017/11/05/%E8%B0%88%E4%B8%80%E8%B0%88%E4%B8%80%E5%B9%B4%E6%9D%A5%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+    <id>//kuckboy1994.com/2017/11/05/谈一谈一年来的经历/</id>
     <published>2017-11-05T03:48:03.000Z</published>
     <updated>2018-05-08T03:51:59.732Z</updated>
     
@@ -429,7 +515,7 @@
     </summary>
     
     
-      <category term="感悟" scheme="//blog.kuckboy1994.com/tags/%E6%84%9F%E6%82%9F/"/>
+      <category term="感悟" scheme="//kuckboy1994.com/tags/%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   

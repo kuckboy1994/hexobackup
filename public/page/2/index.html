@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="//blog.kuckboy1994.com">
+  <link rel="dns-prefetch" href="//kuckboy1994.com">
   <title>kuckboy的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="专注种多肉的前端一枚">
 <meta name="keywords" content="前端,node,全栈,多肉,绿植,kuckboy,kuckboy1994,技术,生活,js,jquery,javascript,html5,css3,开发者,程序员,coder,开源,it,programmer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="kuckboy的博客">
-<meta property="og:url" content="//blog.kuckboy1994.com/page/2/index.html">
+<meta property="og:url" content="//kuckboy1994.com/page/2/index.html">
 <meta property="og:site_name" content="kuckboy的博客">
 <meta property="og:description" content="专注种多肉的前端一枚">
 <meta property="og:locale" content="default">
@@ -33,8 +33,41 @@
     }
   </style>
   
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+
+</script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120241019-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120241019-1');
+</script>
+
+<!-- End Google Analytics -->
+
 
   
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?76a7a86c0f64caadb72a6500d5fc21c1";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
 </head>
 
@@ -61,6 +94,8 @@
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/tags/微信小程序/">微信小程序解惑</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -83,11 +118,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/kuckboy1994" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="https://www.weibo.com/shanchao1994" title="weibo"><i class="icon-weibo"></i></a>
-		        
 					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kuckboy1994/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:shanchao@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -119,6 +150,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,11 +159,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/kuckboy1994" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="https://www.weibo.com/shanchao1994" title="weibo"><i class="icon-weibo"></i></a>
-			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kuckboy1994/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:shanchao@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -141,7 +170,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/tags/微信小程序/">微信小程序解惑</a></li>
 		        
 				</ul>
 			</nav>
@@ -157,6 +188,252 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-注释规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/04/注释规范/">注释规范</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/04/注释规范/" class="archive-article-date">
+  	<time datetime="2017-12-04T06:11:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此为开发团队遵循和约定的<code>注释规范</code>，意在降低后期维护的代价。</p>
+<h2 id="为什么要写代码注释？"><a href="#为什么要写代码注释？" class="headerlink" title="为什么要写代码注释？"></a>为什么要写代码注释？</h2><ul>
+<li>编码规范中有一条就是——见名知意。但有的时候直白的函数名不能表达完整的意思，这时候就是注释就可以很好的帮助我们解释和说明了。</li>
+<li>请确保你的代码能够自描述、注释良好并且易于他人理解。</li>
+<li>好的代码注释能够传达上下文关系和代码目的。</li>
+</ul>
+<h2 id="注释中写什么？"><a href="#注释中写什么？" class="headerlink" title="注释中写什么？"></a>注释中写什么？</h2><ul>
+<li>难于理解的代码段</li>
+<li>可能存在错误的代码段</li>
+<li>浏览器特殊的HACK代码</li>
+<li>想吐槽的产品逻辑</li>
+<li>业务逻辑强相关的代码</li>
+</ul>
+<p>对这些内容写一些注释对于自己或帮助他人理解是非常有帮助的。<br>
+        
+          <a class="article-more-a" href="/2017/12/04/注释规范/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">规范</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注释</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/04/注释规范/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vi-vim" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/03/vi-vim/">vi-vim</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/03/vi-vim/" class="archive-article-date">
+  	<time datetime="2017-12-03T06:09:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><code>vi</code>和<code>Vim</code>都是运行在<code>类Unix系统</code>下的编辑器。<br><code>vi</code>是<code>Visual</code>的不正规的缩写。<br><code>Vim</code>是从<code>vi</code>发展出来的一个文本编辑器。正式名字<code>Vi IMproved</code>。</p>
+<h2 id="vi琐事"><a href="#vi琐事" class="headerlink" title="vi琐事"></a>vi琐事</h2><p>vi是在伯克利加州大学，Evans Hall中，使用”Lear-Siegler ADM3A终端”编写完成，在这台机器上的“退出键”（Esc），也就是今天键盘“表格键”（Tab）的位置，目前vi用户仍使用“退出键”（Esc）来转换状态。<br><img src="https://raw.githubusercontent.com/kuckboy1994/Blog/master/images/vi%26vim/asm3aKeyboard.png" alt=""><br>看了这张图，ヾ(｡｀Д´｡) 和HHKB的键盘好像啊，怪不得大神都用HHKB。<br>但用HHKB不一定是大神☹。<br>
+        
+          <a class="article-more-a" href="/2017/12/03/vi-vim/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">编辑器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/03/vi-vim/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-laydate日历组件改造心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/30/laydate日历组件改造心得/">laydate日历组件改造心得</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/30/laydate日历组件改造心得/" class="archive-article-date">
+  	<time datetime="2017-11-30T06:07:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近两天对<code>layDate 5.0.85</code>版本进行了改造。来谈一下心得。</p>
+<h2 id="修改内容"><a href="#修改内容" class="headerlink" title="修改内容"></a>修改内容</h2><ol>
+<li>修复了当<code>min</code>的<code>日</code>比<code>max</code>的<code>日</code>大的时候。在切换到月份显示界面的时候，最小值的月份显示为不可点。</li>
+<li>增加了过滤日期的功能（正选和反选）</li>
+<li>增加了选择最近的功能</li>
+<li>增加了暗黑主题<br>想要体验的小伙伴，点击<a href="https://github.com/kuckboy1994/laydate" target="_blank" rel="noopener">传送门</a></li>
+</ol>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>当时<code>豆饼</code>(我的同事小伙伴)推荐了我使用layDate日历组件，我看了一下感觉样式上和功能上基本都满足我们工作所需，而且是开源的（这就方便我们个性化的定制）。号称是layui独立维护的三大组件之一，而且还是最近重写的，瞬间感觉就被他征服了。立马上手！<br>
+        
+          <a class="article-more-a" href="/2017/11/30/laydate日历组件改造心得/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/30/laydate日历组件改造心得/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-讨论一下css命名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -835,6 +1112,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">畅言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
              
@@ -843,15 +1132,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">翻译</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,14 +1172,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
@@ -903,11 +1184,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">建站</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -919,7 +1200,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">建站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
@@ -982,7 +1271,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">专注种多肉的前端一枚&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a href=&#34;/简历&#34;&gt;简历&lt;/a&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">专注种多肉的前端一枚. 只要思想不滑坡,办法总比困难多</div>
   	  	
     	</section>
     

@@ -14,7 +14,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: //blog.kuckboy1994.com
+url: //kuckboy1994.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -96,7 +96,6 @@ feed:
   path: atom.xml
   limit: 100
 
-
 jsonContent:
   meta: false
   pages: false
@@ -119,8 +118,8 @@ jsonContent:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: rsync
-  # type: git
+  # type: rsync
+  type: git
   repo: git@github.com:kuckboy1994/kuckboy1994.github.io.git
   branch: master
   host: 140.143.193.185
